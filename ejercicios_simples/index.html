@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>React - ejercicios</title>
+        <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+        <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+        <style>
+            div.bola {
+                background-color: red;
+                width: 50px;
+                height: 50px;
+                display: inline-block;
+                margin: 5px;
+                border-radius: 100%;
+            }
+
+            div.bola.azul {
+                background-color: blue;
+            }
+
+            .vermell {
+                color: red;
+            }
+            .verd {
+                color: green;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="root"></div>
+
+        <script type="text/babel">
+            function Main() {
+                return (
+                    <div>
+                        <HolaMundo />
+                        <Bola />
+                        <Cuadrado />
+                        <Separador />
+                    </div>
+                );
+            }
+            const HolaMundo = () => <h1>Hola Mundo</h1>;
+            const Bola = () => (
+                <div
+                    style={{
+                        height: "50px",
+                        width: "50px",
+                        display: "inline-block",
+                        borderRadius: "50%",
+                        backgroundColor: "red",
+                        margin: "5px",
+                    }}
+                ></div>
+            );
+            const Cuadrado = () => (
+                <div
+                    style={{
+                        height: "50px",
+                        width: "50px",
+                        display: "inline-block",
+                        backgroundColor: "red",
+                        margin: "5px",
+                    }}
+                ></div>
+            );
+            const Separador = () => (
+                <div
+                    style={{
+                        margin:0,
+                        padding:0,
+                    }}
+                >
+                    <div
+                        style={{
+                            height: "1px",
+                            width: "100%",
+                            display: "inline-block",
+                            backgroundColor: "blue",
+                            marginTop: "1px",
+                        }}
+                    ></div>
+                    <div
+                        style={{
+                            height: "3px",
+                            width: "100%",
+                            display: "inline-block",
+                            backgroundColor: "black",
+                            marginTop: "3px",
+                        }}
+                    ></div>
+                </div>
+            );
+            ReactDOM.render(<Main />, document.getElementById("root"));
+        </script>
+    </body>
+</html>
