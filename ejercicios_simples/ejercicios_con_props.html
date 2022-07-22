@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>React - ejercicios</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+        <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+        <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+        <style>
+            div.bola {
+                background-color: red;
+                width: 50px;
+                height: 50px;
+                display: inline-block;
+                margin: 5px;
+                border-radius: 100%;
+            }
+
+            div.bola.azul {
+                background-color: blue;
+            }
+
+            .vermell {
+                color: red;
+            }
+            .verd {
+                color: green;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="root"></div>
+
+        <script type="text/babel">
+            function Main() {
+                return (
+                    <div>
+                        <Titulo texto="Hola React!" />
+                        <Bola talla="80px" margen="10px" fondo="#ff0000" />
+                        <CuadradoB talla="70px" grosor="5px" margen="8px" color="red"/>
+                    </div>
+                );
+            }
+            const Titulo = ({ texto }) => <h1>{texto}</h1>;
+            const Bola = ({ talla, margen, fondo }) => (
+                <div
+                    style={{
+                        height: talla,
+                        width: talla,
+                        backgroundColor: fondo,
+                        margin: margen,
+                        borderRadius: "50%",
+                    }}
+                ></div>
+            );
+            const CuadradoB = ({talla, margen, grosor, color}) => 
+            //en les funcions fletxa, al ser return implícit (que no escrius return), poses directament les () per agrupar el q no et cap en una línia. En el cas del component Main, allà sí que s'esta fent return perquè és una funció normal, no és fletxa.
+            (
+                <div
+                    style={{
+                        height:talla,
+                        width:talla,
+                        margin:margen,
+                        border: `${grosor} solid black`,
+                        backgroundColor:color
+                    }}
+                ></div>
+            )
+
+            const Mosca = ({color}) => 
+            (
+                <div>
+                    <i class="fa-duotone fa-spider"></i>
+                </div>
+            )
+    
+
+            ReactDOM.render(<Main />, document.getElementById("root"));
+        </script>
+    </body>
+</html>
