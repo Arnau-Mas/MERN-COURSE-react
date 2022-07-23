@@ -60,6 +60,7 @@
                             margen="10px"
                         />
                         <Capital nom="Barcelona" />
+                        <Gato ancho="200px" alto="200px" nombre="Garfield" />
                     </div>
                 );
             }
@@ -107,10 +108,42 @@
 
             const Capital = ({ nom }) => (
                 <div>
-                    <p 
-                    style={{ fontSize:"200px", margin:0, padding:0 }}>{nom[0]}</p>
+                    <p style={{ fontSize: "200px", margin: 0, padding: 0 }}>
+                        {nom[0]}
+                    </p>
+                    <p style={{ fontSize: "30px", margin: 0, padding: 0 }}>
+                        {nom}
+                    </p>
+                </div>
+            );
+
+            const Gato = ({ ancho, alto, nombre }) => (
+                <div
+                    style={{
+                        border: "1px solid blue",
+                        width: ancho,
+                        height: alto,
+                    }}
+                >
+                    <img
+                        style={{
+                            height: "85%",
+                            width: "100%",
+                            margin: 0,
+                            padding: 0,
+                        }}
+                        src="https://placekitten.com/200/130"
+                        alt=""
+                    />
                     <p
-                    style={{ fontSize:"30px", margin:0, padding:0 }}>{nom}</p>
+                        style={{
+                            margin: 0,
+                            padding: 0,
+                            textAlign: "center",
+                        }}
+                    >
+                        {nombre}
+                    </p>
                 </div>
             );
 
