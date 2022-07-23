@@ -61,6 +61,7 @@
                         />
                         <Capital nom="Barcelona" />
                         <Gato ancho="200px" alto="200px" nombre="Garfield" />
+                        <FotoBola src="https://placekitten.com/200/130" radio="200px"/>
                     </div>
                 );
             }
@@ -146,6 +147,18 @@
                     </p>
                 </div>
             );
+
+            const FotoBola = ({src, radio}) => (
+                <div>
+                    <img
+                        style={{
+                            borderRadius:radio
+                        }}
+                        src={src}
+                        alt=""
+                    />
+                </div>
+            )
 
             ReactDOM.render(<Main />, document.getElementById("root"));
         </script>
