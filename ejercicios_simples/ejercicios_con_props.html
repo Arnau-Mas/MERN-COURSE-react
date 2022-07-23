@@ -43,14 +43,23 @@
                 return (
                     <div>
                         <Titulo texto="Hola React!" />
-                        <Bola talla="80px" margen="10px" fondo="rgb(255, 79, 79)" />
+                        <Bola
+                            talla="80px"
+                            margen="10px"
+                            fondo="rgb(255, 79, 79)"
+                        />
                         <CuadradoB
                             talla="70px"
                             grosor="5px"
                             margen="8px"
                             color="rgb(255, 79, 79)"
                         />
-                        <Mosca talla="40px" color="rgb(255, 79, 79)" margen="10px" />
+                        <Mosca
+                            talla="40px"
+                            color="rgb(255, 79, 79)"
+                            margen="10px"
+                        />
+                        <Capital nom="Barcelona" />
                     </div>
                 );
             }
@@ -85,17 +94,25 @@
                         height: talla,
                         width: talla,
                         color: color,
-                        position:"absolute",
-                        top:margen,
-                        right:margen,
-                        display:"flex",
-                        justifyContent:"flex-end",
+                        position: "absolute",
+                        top: margen,
+                        right: margen,
+                        display: "flex",
+                        justifyContent: "flex-end",
                     }}
-                ><i className="fa-solid fa-bug"></i>
+                >
+                    <i className="fa-solid fa-bug"></i>
                 </div>
             );
 
-            const Capital = ({nom}) => 
+            const Capital = ({ nom }) => (
+                <div>
+                    <p 
+                    style={{ fontSize:"200px", margin:0, padding:0 }}>{nom[0]}</p>
+                    <p
+                    style={{ fontSize:"30px", margin:0, padding:0 }}>{nom}</p>
+                </div>
+            );
 
             ReactDOM.render(<Main />, document.getElementById("root"));
         </script>
