@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>React - ejercicios</title>
+        <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+        <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        />
+        <style>
+            div.bola {
+                background-color: rgb(255, 79, 79);
+                width: 50px;
+                height: 50px;
+                display: inline-block;
+                margin: 5px;
+                border-radius: 100%;
+            }
+
+            div.bola.azul {
+                background-color: blue;
+            }
+
+            .vermell {
+                color: rgb(255, 79, 79);
+            }
+            .verd {
+                color: green;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="root"></div>
+
+        <script type="text/babel">
+            function Main() {
+                return (
+                    <div>
+                        <Titulo texto="Hola React!" />
+                        <FotoBola src="https://www.fillmurray.com/640/360" talla="200"/>
+                        <Marco src="https://placekitten.com/200/286" fondo="beige" borde="10px" color="red" />
+                    </div>
+                );
+            }
+            const Titulo = ({ texto }) => <h1>{texto}</h1>;
+            const FotoBola = ({src, talla}) => (
+                <div>
+                    <img
+                        style={{
+                            height:talla,
+                            width:talla,
+                            borderRadius:`${talla/2}`
+                        }}
+                        src={src}
+                        alt=""
+                    />
+                </div>
+            )
+
+            const BolaBingo = ({talla, margen, fondo, color, num}) => (
+                <div
+                    style={{
+                        height: talla,
+                        width: talla,
+                        backgroundColor: fondo,
+                        margin: margen,
+                        color:color,
+                        borderRadius: "50%",
+                        display:"flex",
+                        alignItems:"center",
+                        justifyContent:"center"
+                    }}>
+                    <p>{num}</p>
+                </div>
+            )
+
+            const Marco = ({src, borde, color, fondo}) => (
+                <div>
+                    <img src={src} 
+                    style = {{
+                        padding:borde,
+                        backgroundColor:fondo,
+                        border:`3px solid ${color}`,
+                    }} />
+                </div>
+            )
+
+            ReactDOM.render(<Main />, document.getElementById("root"));
+        </script>
+    </body>
+</html>
