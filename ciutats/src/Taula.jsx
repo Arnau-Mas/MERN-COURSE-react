@@ -80,7 +80,7 @@ function Taula(){
     return (
         <div>
             <table>
-                <thead>
+                <thead className='bg-green'>
                     <tr>
                         <td>Municipi</td>
                         <td>Població</td>

@@ -4,11 +4,10 @@
     font-family: 'Comfortaa', cursive;
 }
 
-thead{
-    background-color: #01987A;
-    color: white;
-    font-size: 1.2rem;
+table{
+    /* box-shadow: 1px 1px 1px; */
 }
+
 
 table, tr, td{
     border-collapse: collapse;
@@ -16,4 +15,18 @@ table, tr, td{
 
 td{
     padding: 1rem;
+}
+
+tr:nth-child(odd) {
+    background-color: #eaeaea;
+    color: #01987A;
+    font-weight: 700;
+}
+
+
+thead > tr > td{
+    background-color: #01987A;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
 }
