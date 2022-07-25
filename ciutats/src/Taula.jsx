@@ -69,7 +69,7 @@ function Taula(){
         ];
         /* {municipi: "Barcelona", poblacio: "1.620.809", provincia: "Barcelona", comarca: "Barcelonès"}, */
     let tableRows = CIUTATS_CAT_20K.map(ciutat => (
-        <tr>
+        <tr key={ciutat.municipi}>
             <td>{ciutat.municipi}</td>
             <td>{ciutat.poblacio}</td>
             <td>{ciutat.provincia}</td>
