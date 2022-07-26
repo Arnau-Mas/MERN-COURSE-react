@@ -79,9 +79,10 @@ function Taula(){
         
     return (
         <div>
+            <h1>Llistat de ciutats</h1>
             <table>
                 <thead className='bg-green'>
-                    <tr>
+                    <tr className='trMain'>
                         <td>Municipi</td>
                         <td>Població</td>
                         <td>Provincia</td>
