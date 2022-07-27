@@ -2,6 +2,7 @@ import {useState} from 'react';
 
 function Contador(){
     const [contador, setContador] = useState(0);
+
     function increase(){
         if(contador<=9){
             setContador(contador+1);
@@ -16,9 +17,9 @@ function Contador(){
     }
     return (
         <div style={{display:"flex"}}>
-            <button style={{padding:"0rem 1rem"}} onClick={decrease}>-</button>
+            <button disabled={contador<=0} style={{padding:"0rem 1rem"}} onClick={decrease}>-</button>
             <p style={{fontSize:"2rem"}}>{contador}</p>
-            <button style={{padding:"0rem 1rem"}} onClick={increase}>+</button>
+            <button disabled={contador>=10} style={{padding:"0rem 1rem"}} onClick={increase}>+</button>
         </div>
     )
 }

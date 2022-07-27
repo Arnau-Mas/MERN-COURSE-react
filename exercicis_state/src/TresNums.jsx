@@ -2,7 +2,19 @@ import { useState } from "react";
 
 function TresNums(){
 
-    const [tresNums, setTresNums] = useState([])
+    const [tresNums, setTresNums] = useState([
+        {
+            id:1,
+            num: Math.floor ( Math.random() * 50 )
+        }, 
+        {
+            id:2,
+            num: Math.floor ( Math.random() * 50 )
+        }, 
+        {
+            id:3,
+            num: Math.floor ( Math.random() * 50 )
+        }])
 
     let cercle = {
         height: "100px",
@@ -16,14 +28,12 @@ function TresNums(){
     }
 
     function calculaTresNum(){
-
+        setTresNums(tresNums.map(tresN => ({id:tresN.id, num:Math.floor ( Math.random() * 50 )})))
     }
 
    return (
     <div style={{display:"flex"}}>
-        <div style={cercle}>{tresNums[1]}</div>
-        <div style={cercle}>{tresNums[2]}</div>
-        <div style={cercle}>{tresNums[3]}</div>
+        {tresNums.map(tresNum => <div key={tresNum.id} style={cercle}>{tresNum.num}</div>)}
         <button onClick={calculaTresNum}>Calcula</button>
     </div>
    )
