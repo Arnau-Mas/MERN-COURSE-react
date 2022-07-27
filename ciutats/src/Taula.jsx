@@ -70,7 +70,6 @@ function Taula(){
         {municipi: "Amposta", poblacio: "20.572", provincia: "Tarragona", comarca: "Montsià"},
         {municipi: "Manlleu", poblacio: "20.007", provincia: "Barcelona", comarca: "Osona"}
         ];
-        /* {municipi: "Barcelona", poblacio: "1.620.809", provincia: "Barcelona", comarca: "Barcelonès"}, */
     let tableRows = CIUTATS_CAT_20K.map(ciutat => (
         <tr key={ciutat.municipi}>
             <td>{ciutat.municipi}</td>
@@ -79,12 +78,13 @@ function Taula(){
             <td>{ciutat.comarca}</td>
         </tr>
     ))
-        
+    
     return (
         <div>
+            <h1>Llistat de ciutats</h1>
             <table>
                 <thead className='bg-green'>
-                    <tr>
+                    <tr className='trMain'>
                         <td>Municipi</td>
                         <td>Població</td>
                         <td>Provincia</td>
