@@ -1,6 +1,9 @@
 import './Taula.css'
 
+
+
 function Taula(){
+    //tot el codi de dins es refresca cada vegada que es re renderiza el component
     const CIUTATS_CAT_20K = [
         {municipi: "Barcelona", poblacio: "1.620.809", provincia: "Barcelona", comarca: "Barcelonès"},
         {municipi: "L'Hospitalet de Llobregat", poblacio: "257.349", provincia: "Barcelona", comarca: "Barcelonès"},
@@ -95,3 +98,5 @@ function Taula(){
 }
 
 export default Taula;
+
+//React snippets
