@@ -3,7 +3,7 @@ import './Taula.css'
 
 
 function Taula(){
-    //tot el codi de dins es refresca cada vegada que es re renderiza el component
+    //tot el codi de dins de la funció(component) es refresca cada vegada que es re renderiza el component
     const CIUTATS_CAT_20K = [
         {municipi: "Barcelona", poblacio: "1.620.809", provincia: "Barcelona", comarca: "Barcelonès"},
         {municipi: "L'Hospitalet de Llobregat", poblacio: "257.349", provincia: "Barcelona", comarca: "Barcelonès"},
@@ -69,7 +69,8 @@ function Taula(){
         {municipi: "Vilassar de Mar", poblacio: "20.636", provincia: "Barcelona", comarca: "Maresme"},
         {municipi: "Amposta", poblacio: "20.572", provincia: "Tarragona", comarca: "Montsià"},
         {municipi: "Manlleu", poblacio: "20.007", provincia: "Barcelona", comarca: "Osona"}
-        ];
+    ];
+
     let tableRows = CIUTATS_CAT_20K.map(ciutat => (
         <tr key={ciutat.municipi}>
             <td>{ciutat.municipi}</td>
