@@ -14,7 +14,7 @@ function Boles(){
             <Bola valor={2} funcio={setinputPass} pass={inputPass} />
             <Bola valor={3} funcio={setinputPass} pass={inputPass} />
             <Bola valor={4} funcio={setinputPass} pass={inputPass} />
-            {JSON.stringify(inputPass)===JSON.stringify(password) ? <p>Has encertat!</p> : <p></p>}
+            {JSON.stringify(inputPass)===JSON.stringify(password) ? <p style={{fontSize:"2rem", backgroundColor:"orange", borderRadius:"2rem", padding:"2rem"}}>Has encertat!</p> : <p></p>}
         </div>
     )
 }

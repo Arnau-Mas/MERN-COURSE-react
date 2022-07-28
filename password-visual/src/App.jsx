@@ -1,5 +1,6 @@
 import reactLogo from './assets/react.svg'
 import Boles from './Boles'
+import "./App.jsx"
 
 function App() {
 

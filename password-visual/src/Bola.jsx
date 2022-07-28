@@ -3,7 +3,7 @@ import { useState } from "react";
 function Bola({pass, valor, funcio}){
 
     const [actiu, setActiu] = useState(false)
-    
+
     function actualitzaPass(){
         let password = [...pass];
 
@@ -22,7 +22,7 @@ function Bola({pass, valor, funcio}){
         <div onClick={actualitzaPass} style={{
             height:"100px",
             width:"100px",
-            backgroundColor: actiu ? "orange" : "grey",
+            backgroundColor: actiu ? "orange" : "grey", /* també pots crear una clase i fer className={actiu ? "bola on" : "bola off"} */
             borderRadius:"50%"
         }}></div>
     )
