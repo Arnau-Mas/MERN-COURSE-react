@@ -8,11 +8,11 @@ import ValidarPassword from './ValidarPassword'
 function App() {
   return (
     <div className="App">
-      <h1>React input exercises</h1>
+      <h1 className='mb-5'>React input exercises</h1>
       <Autocompletar/>
       <FormularioLogin/>
       <ValidarPassword/>
-     {/*  <ValidarEmail/> */}
+      <ValidarEmail/>
     </div>
   )
 }

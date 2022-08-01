@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Login from "./Login";
 import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+import Form from 'react-bootstrap/Form'; // o {Form} from 'react'
 /* value es necessari per tenir dades sincronitzades */
 
 function FormularioLogin(){
@@ -20,10 +20,9 @@ function FormularioLogin(){
     }
 
     function handleSubmit(e){
-        e.preventDefault();
+        e.preventDefault(); /* Si volguéssis gestionar un action es pot gestionar */
         setShow(true)
         if(user===USER && password===PASS){
-            console.log("aaa")
             setOption(true);
         }else{
             setOption(false);
