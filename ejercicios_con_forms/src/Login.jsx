@@ -1,9 +1,11 @@
-function Login({user, pass}){
-    const USER = "arnau"
+function Login({form}){
+    console.log(form)
+    const USER = "arnau@gmail.com"
     const PASS = "12345"
+    let {user, password} = form;
     return (
         <div>
-            {user && pass ? user.toLowerCase() === USER && pass.toString().toLowerCase() === PASS ? <p>Endavant</p> : <p>Stop</p> : <p></p>}
+            {user && password ? user.toLowerCase() === USER && password.toLowerCase() === PASS ? <p>Endavant</p> : <p>Stop</p> : <p></p>}
         </div>
     )
 

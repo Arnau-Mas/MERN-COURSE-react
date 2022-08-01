@@ -1,26 +1,51 @@
 import { useState } from "react";
 import Login from "./Login";
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 function FormularioLogin(){
-    const [name, setName] = useState("");
-    const [password, setPassword] = useState("");
-
+/*     const [name, setName] = useState("");
+    const [password, setPassword] = useState(""); */
+    const [form, setForm] = useState({
+        user:"",
+        password:""
+    })
+    const {user, password} = form;
+    /* 
     function changeName(e){
         setName(e.target.value);
     }
 
     function changePass(e){
         setPassword(e.target.value)
+    } */
+
+    function inputChange(e){
+        setForm({...form, [e.target.name]: e.target.value})
+    }
+
+    function handleSubmit(e){
+        e.preventDefault();
+        
     }
 
     return (
-        <div style={{display:"flex", flexDirection:"column"}}>
-            <h3>Formulari Login</h3>
-            <label style={{width:"20%"}} htmlFor="user">Usuari</label>
-            <input style={{width:"20%"}} onChange={changeName} value={name} id="user" type="text"></input>
-            <label style={{width:"20%"}} htmlFor="pass">Contrassenya</label>
-            <input style={{width:"20%"}} onChange={changePass} value={password} id="pass" type="password"></input>
-            <Login user={name} pass={password} />
+        <div className="mt-5 w-25">
+            <h3>Formulario Login</h3>
+            <Form onSubmit={handleSubmit}>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Email address</Form.Label>
+                <Form.Control name="user" onChange={inputChange} type="email" placeholder="Enter email" value={user} />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Password</Form.Label>
+                <Form.Control name="password" type="password" onChange={inputChange} placeholder="Password" value={password} />
+                </Form.Group>
+                <Button variant="primary" type="submit">
+                Submit
+                </Button>
+            </Form>
+            <Login />
         </div>
     )
 }
