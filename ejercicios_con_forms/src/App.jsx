@@ -12,7 +12,7 @@ function App() {
       <Autocompletar/>
       <FormularioLogin/>
       <ValidarPassword/>
-      <ValidarEmail/>
+     {/*  <ValidarEmail/> */}
     </div>
   )
 }

@@ -2,23 +2,18 @@ import { useState } from "react";
 import Login from "./Login";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+/* value es necessari per tenir dades sincronitzades */
 
 function FormularioLogin(){
-/*     const [name, setName] = useState("");
-    const [password, setPassword] = useState(""); */
+    const USER = "arnau@gmail.com";
+    const PASS = "12345";
     const [form, setForm] = useState({
         user:"",
         password:""
     })
+    const [show, setShow] = useState(false);
+    const [option, setOption] = useState(false)
     const {user, password} = form;
-    /* 
-    function changeName(e){
-        setName(e.target.value);
-    }
-
-    function changePass(e){
-        setPassword(e.target.value)
-    } */
 
     function inputChange(e){
         setForm({...form, [e.target.name]: e.target.value})
@@ -26,7 +21,13 @@ function FormularioLogin(){
 
     function handleSubmit(e){
         e.preventDefault();
-        
+        setShow(true)
+        if(user===USER && password===PASS){
+            console.log("aaa")
+            setOption(true);
+        }else{
+            setOption(false);
+        }
     }
 
     return (
@@ -39,13 +40,13 @@ function FormularioLogin(){
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Password</Form.Label>
-                <Form.Control name="password" type="password" onChange={inputChange} placeholder="Password" value={password} />
+                <Form.Control name="password" type="password" onChange={inputChange} placeholder="Password" value={password} /> 
                 </Form.Group>
                 <Button variant="primary" type="submit">
                 Submit
                 </Button>
             </Form>
-            <Login />
+            {show && <Login option={option} />}
         </div>
     )
 }
