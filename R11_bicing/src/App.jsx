@@ -4,8 +4,8 @@ import { BicingTable } from './BicingTable'
 
 function App() {
   return (
-    <div className="App">
-      <h1>Aplicació Bicis</h1>
+    <div className="App container">
+      <h1 className='mt-5'>Aplicació Bicis</h1>
       <BicingTable/>
     </div>
   )
