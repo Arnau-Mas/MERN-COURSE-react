@@ -23,19 +23,22 @@ const productes = [
 ];
 export function LlistaDeLaCompra(){
     const [cistella, setCistella] = useState([]);
+
+    let productStyle = {display:"flex", flexDirection:"column", gap:"1rem"}
+
     function afegirProducte(producteAfegit){
-        //SI NO EXISTE AÑADO EL PRODUCTEAFEGIT A LA CESTA
+        
         if(!cistella.some(producte => producte.nom === producteAfegit.nom)){
             return setCistella([...cistella, {...producteAfegit, quantitat:1}])
         }
-        //SI EXISTE, LE SUMO 1 A LA CANTIDAD
+        
         let cistellaArray = cistella.map(producte => {
             if(producte.id === producteAfegit.id){
                     return {...producte, quantitat:producte.quantitat+1}
             }
             return producte
         })
-        //LUEGO AÑADO EL NUEVO ARRAY AL ESTADO
+    
         setCistella([...cistellaArray])
     }
 
@@ -48,7 +51,7 @@ export function LlistaDeLaCompra(){
     return (
         <div>
             <h1>Llista de la compra</h1>
-            <div style={{display:"flex", flexDirection:"column", gap:"1rem"}}>
+            <div style={productStyle}>
                 {productes.map(producte => <div key={producte.id} style={{display:"flex",alignItems:"center", justifyContent:"space-between", padding:"0 1rem", backgroundColor:"green", width:"15rem", height:"3rem", fontSize:"24px", color:"white"}}>{producte.nom}({producte.preu}€/u)<button onClick={() => afegirProducte(producte)}>Afegir</button></div>)}
             </div>
             <div>
