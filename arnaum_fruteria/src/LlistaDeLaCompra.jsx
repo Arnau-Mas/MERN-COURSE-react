@@ -38,6 +38,13 @@ export function LlistaDeLaCompra(){
         //LUEGO AÑADO EL NUEVO ARRAY AL ESTADO
         setCistella([...cistellaArray])
     }
+
+    function treureProducte(producteTreure){
+        let index = cistella.indexOf(producte => producte.nom === producteTreure.nom);
+        let cistellaArray = [...cistella];
+        cistellaArray.splice(index);
+        setCistella(cistellaArray);
+    }
     return (
         <div>
             <h1>Llista de la compra</h1>
@@ -45,8 +52,8 @@ export function LlistaDeLaCompra(){
                 {productes.map(producte => <div key={producte.id} style={{display:"flex",alignItems:"center", justifyContent:"space-between", padding:"0 1rem", backgroundColor:"green", width:"15rem", height:"3rem", fontSize:"24px", color:"white"}}>{producte.nom}({producte.preu}€/u)<button onClick={() => afegirProducte(producte)}>Afegir</button></div>)}
             </div>
             <div>
-                {cistella.map((producte =><div>{producte.nom} {producte.quantitat}u x {producte.preu}€/u = {(producte.quantitat*producte.preu).toFixed(2)}€</div>))}
-                <div>Total: {}</div>
+                {cistella.map((producte =><div><p>{producte.nom} {producte.quantitat}u x {producte.preu}€/u = {(producte.quantitat*producte.preu).toFixed(2)}€</p><button onClick={() => treureProducte(producte)}>Treure</button></div>))}
+                <p>Total: {cistella.reduce((prev, curr) => prev+(curr.preu*curr.quantitat), 0).toFixed(2)} €</p>
             </div>
         </div>
     )
