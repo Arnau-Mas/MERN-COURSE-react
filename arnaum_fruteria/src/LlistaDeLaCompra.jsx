@@ -24,25 +24,19 @@ const productes = [
 export function LlistaDeLaCompra(){
     const [cistella, setCistella] = useState([]);
     function afegirProducte(producteAfegit){
-        if(cistella.length>0){
-            let cistellaArray = cistella.map(producte => {
-                if(producte.id == producteAfegit.id){
-                    console.log("matching de producte")
-                    if(producte.quantitat){
-                        return {...producte, quantitat:producte.quantitat+1}
-                    }else{
-                        return {...producte, quantitat:1}
-                    }
-                }else{
-                    console.log("no matching")
-                    return producte
-                }
-            })
-            setCistella([...cistellaArray])
+        if(cistella.length===0){
+            return setCistella([{...producteAfegit, quantitat:1}]);
         }
-        else{
-            setCistella([producteAfegit])
+        if(!cistella.some(producte => producte.nom === producteAfegit.nom)){
+            return setCistella([...cistella, {...producteAfegit, quantitat:1}])
         }
+        let cistellaArray = cistella.map(producte => {
+            if(producte.id === producteAfegit.id){
+                    return {...producte, quantitat:producte.quantitat+1}
+            }
+            return producte
+        })
+        setCistella([...cistellaArray])
     }
     return (
         <div>
@@ -51,8 +45,8 @@ export function LlistaDeLaCompra(){
                 {productes.map(producte => <div key={producte.id} style={{display:"flex",alignItems:"center", justifyContent:"space-between", padding:"0 1rem", backgroundColor:"green", width:"15rem", height:"3rem", fontSize:"24px", color:"white"}}>{producte.nom}({producte.preu}€/u)<button onClick={() => afegirProducte(producte)}>Afegir</button></div>)}
             </div>
             <div>
-                {cistella.map((producte =><div>{producte.nom}, {producte.quantitat}</div>))}
-                <div>Total:</div>
+                {cistella.map((producte =><div>{producte.nom} {producte.quantitat}u x {producte.preu}€/u = {(producte.quantitat*producte.preu).toFixed(2)}€</div>))}
+                <div>Total: {}</div>
             </div>
         </div>
     )
