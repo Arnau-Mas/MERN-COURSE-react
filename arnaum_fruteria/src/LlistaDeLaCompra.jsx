@@ -24,18 +24,18 @@ const productes = [
 export function LlistaDeLaCompra(){
     const [cistella, setCistella] = useState([]);
     function afegirProducte(producteAfegit){
-        if(cistella.length===0){
-            return setCistella([{...producteAfegit, quantitat:1}]);
-        }
+        //SI NO EXISTE AÑADO EL PRODUCTEAFEGIT A LA CESTA
         if(!cistella.some(producte => producte.nom === producteAfegit.nom)){
             return setCistella([...cistella, {...producteAfegit, quantitat:1}])
         }
+        //SI EXISTE, LE SUMO 1 A LA CANTIDAD
         let cistellaArray = cistella.map(producte => {
             if(producte.id === producteAfegit.id){
                     return {...producte, quantitat:producte.quantitat+1}
             }
             return producte
         })
+        //LUEGO AÑADO EL NUEVO ARRAY AL ESTADO
         setCistella([...cistellaArray])
     }
     return (
