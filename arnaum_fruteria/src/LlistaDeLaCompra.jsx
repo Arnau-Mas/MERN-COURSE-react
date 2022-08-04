@@ -24,8 +24,25 @@ const productes = [
 export function LlistaDeLaCompra(){
     const [cistella, setCistella] = useState([]);
     function afegirProducte(producteAfegit){
-        let existeix = cistella.find(producte => producte.nom === producteAfegit.nom);
-        console.log(existeix)
+        if(cistella.length>0){
+            let cistellaArray = cistella.map(producte => {
+                if(producte.id == producteAfegit.id){
+                    console.log("matching de producte")
+                    if(producte.quantitat){
+                        return {...producte, quantitat:producte.quantitat+1}
+                    }else{
+                        return {...producte, quantitat:1}
+                    }
+                }else{
+                    console.log("no matching")
+                    return producte
+                }
+            })
+            setCistella([...cistellaArray])
+        }
+        else{
+            setCistella([producteAfegit])
+        }
     }
     return (
         <div>
@@ -34,6 +51,7 @@ export function LlistaDeLaCompra(){
                 {productes.map(producte => <div key={producte.id} style={{display:"flex",alignItems:"center", justifyContent:"space-between", padding:"0 1rem", backgroundColor:"green", width:"15rem", height:"3rem", fontSize:"24px", color:"white"}}>{producte.nom}({producte.preu}€/u)<button onClick={() => afegirProducte(producte)}>Afegir</button></div>)}
             </div>
             <div>
+                {cistella.map((producte =><div>{producte.nom}, {producte.quantitat}</div>))}
                 <div>Total:</div>
             </div>
         </div>
