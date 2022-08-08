@@ -15,9 +15,9 @@ import { Home } from './components/Home'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter> {/* Element per a que es puguin captar les rutes i redireccionar com correspongui */}
       <Routes>
-        <Route path="/" element={<App/>}> {/* ruta pare */}
+        <Route path="/" element={<App/>}> {/* ruta pare de subgrup */}
           <Route index element={<Home/>}/>
           <Route path='/collserola' element={<Collserola/>}/>
           <Route path='/deltallobregat' element={<DeltaLlobregat/>}/>
