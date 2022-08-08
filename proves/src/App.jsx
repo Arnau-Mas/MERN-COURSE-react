@@ -1,11 +1,10 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import { PokemonSetup } from './PokemonSetup'
+import {Outlet} from "react-router-dom";
 function App() {
 
   return (
     <div>
-      <PokemonSetup/>
+      <h1>Provant rutes</h1>
+      <Outlet/>
     </div>
   )
 }
