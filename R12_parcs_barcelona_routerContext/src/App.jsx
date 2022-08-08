@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <div className='title'>
-        <h1>Salir.com</h1>
+        <Link to="/"><h1>Salir.com</h1></Link>
         <div style={{display:"flex", gap:"0.5rem"}}>
           <button>CAT</button>
           <button>ES</button>
