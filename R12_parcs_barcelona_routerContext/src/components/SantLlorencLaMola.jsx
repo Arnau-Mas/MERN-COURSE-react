@@ -7,7 +7,7 @@ export function SantLlorencLaMola(){
     return (
         <div>
             <h1>{Traductor.traduce("santLlorencLaMolaTitle")}</h1>
-            <p>{Traductor.traduce("santLlorencLaMolaText")}</p>
+            <p style={{marginTop:"1rem"}}>{Traductor.traduce("santLlorencLaMolaText")}</p>
             <img style={{width:"30rem", marginTop:"1rem"}} src={foto}/>
         </div>
     )

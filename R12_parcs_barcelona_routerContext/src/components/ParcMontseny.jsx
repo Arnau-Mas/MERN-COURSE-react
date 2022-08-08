@@ -7,7 +7,7 @@ export function ParcMontseny(){
     return (
         <div>
             <h1>{Traductor.traduce("parcMontsenyTitle")}</h1>
-            <p>{Traductor.traduce("parcMontsenyText")}</p>
+            <p style={{marginTop:"1rem"}}>{Traductor.traduce("parcMontsenyText")}</p>
             <img style={{width:"30rem", marginTop:"1rem"}} src={foto}/>
         </div>
     )

@@ -7,7 +7,7 @@ export function PantaVallvidrera(){
     return (
         <div>
             <h1>{Traductor.traduce("pantaVallvidreraTitle")}</h1>
-            <p>{Traductor.traduce("pantaVallvidreraText")}</p>
+            <p style={{marginTop:"1rem"}}>{Traductor.traduce("pantaVallvidreraText")}</p>
             <img style={{width:"30rem", marginTop:"1rem"}} src={foto}/>
         </div>
     )

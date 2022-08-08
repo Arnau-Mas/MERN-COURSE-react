@@ -7,7 +7,7 @@ export function Montserrat(){
     return (
         <div>
             <h1>{Traductor.traduce("montserratTitle")}</h1>
-            <p>{Traductor.traduce("montserratText")}</p>
+            <p style={{marginTop:"1rem"}}>{Traductor.traduce("montserratText")}</p>
             <img style={{width:"30rem", marginTop:"1rem"}} src={foto}/>
         </div>
     )

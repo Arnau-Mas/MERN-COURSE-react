@@ -7,7 +7,7 @@ export function DeltaLlobregat(){
     return (
         <div>
             <h1>Delta del Llobregat</h1>
-            <p>{Traductor.traduce("deltaLlobregatText")}</p>
+            <p style={{marginTop:"1rem"}}>{Traductor.traduce("deltaLlobregatText")}</p>
             <img style={{width:"30rem", marginTop:"1rem"}} src={foto}/>
         </div>
     )

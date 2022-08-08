@@ -7,7 +7,7 @@ export function ParcGarraf(){
     return (
         <div>
             <h1>{Traductor.traduce("parcGarrafTitle")}</h1>
-            <p>{Traductor.traduce("parcGarrafText")}</p>
+            <p style={{marginTop:"1rem"}}>{Traductor.traduce("parcGarrafText")}</p>
             <img style={{width:"30rem", marginTop:"1rem"}} src={foto}/>
         </div>
     )

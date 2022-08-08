@@ -7,7 +7,7 @@ export function Pedraforca(){
     return (
         <div>
             <h1>El Pedraforca</h1>
-            <p>{Traductor.traduce("pedraforcaText")}</p>
+            <p style={{marginTop:"1rem"}}>{Traductor.traduce("pedraforcaText")}</p>
             <img style={{width:"30rem", marginTop:"1rem"}} src={foto}/>
         </div>
     )

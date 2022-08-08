@@ -25,7 +25,7 @@ function App() {
       </div>
         <div style={{display:"flex", gap:"4rem"}}>
           <NavBar/>
-          <div style={{marginTop:"2rem"}}>
+          <div style={{marginTop:"2rem", width:"70%"}}>
             <Outlet/>
           </div>
         </div>
