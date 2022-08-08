@@ -14,13 +14,13 @@ function App() {
   }
 
   return (
-    <ComponentTraductor.Provider >
+    <ComponentTraductor.Provider value={{traduce, idioma}} >
     <div className="App">
       <div className='title'>
         <Link to="/"><h1>Salir.com</h1></Link>
         <div style={{display:"flex", gap:"0.5rem"}}>
-          <button>CAT</button>
-          <button>ES</button>
+          <button onClick={() => setIdioma(0)}>CAT</button>
+          <button onClick={() => setIdioma(1)}>ES</button>
         </div>
       </div>
         <div style={{display:"flex", gap:"4rem"}}>
