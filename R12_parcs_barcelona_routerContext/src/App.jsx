@@ -1,6 +1,9 @@
 import './App.css'
 import { NavBar } from './components/NavBar'
 import { Outlet, Link } from "react-router-dom";
+import ComponentTraductor from './components/ComponentTraductor';
+import diccionari from "./components/diccionari.js"
+
 function App() {
 
   return (
@@ -12,12 +15,14 @@ function App() {
           <button>ES</button>
         </div>
       </div>
-      <div style={{display:"flex", gap:"4rem"}}>
-        <NavBar/>
-        <div style={{marginTop:"2rem"}}>
-          <Outlet/>
+      <ComponentTraductor.Provider >
+        <div style={{display:"flex", gap:"4rem"}}>
+          <NavBar/>
+          <div style={{marginTop:"2rem"}}>
+            <Outlet/>
+          </div>
         </div>
-      </div>
+      </ComponentTraductor.Provider>
     </div>
   )
 }
