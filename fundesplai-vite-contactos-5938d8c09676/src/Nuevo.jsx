@@ -11,12 +11,16 @@ export default (props) => {
   const [email, setEmail] = useState('');
   const [tel, setTel] = useState('');
   const [volver, setVolver] = useState();
+  const [date, setDate] = useState("")
+  const [color, setColor] = useState("");
 
   const guardar = () => {
     const clienteNuevo = {
       nom: nom,
       email: email,
       tel: tel,
+      date:date,
+      color:color
     };
     // aqui haríamos una primera validación del form
     // si todo ok seguimos
@@ -47,6 +51,15 @@ export default (props) => {
         <Form.Control type="text" name="tel" value={tel} onChange={(e) => setTel(e.target.value)}  />
       </Form.Group>
 
+      <Form.Group>
+        <Form.Label>Fecha de Nacimiento</Form.Label>
+        <Form.Control type="text" name="date" value={date} onChange={(e) => setDate(e.target.value)}  />
+      </Form.Group>
+
+      <Form.Group>
+        <Form.Label>Color favorito</Form.Label>
+        <Form.Control type="color" name="color" value={color} onChange={(e) => setColor(e.target.value)}  />
+      </Form.Group>
       <hr />
 
       <Link className='btn btn-danger' to='/contactos' >{Traductor.traduce('cancelar')}</Link>

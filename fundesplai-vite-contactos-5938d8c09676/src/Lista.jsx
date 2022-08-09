@@ -12,7 +12,7 @@ export default () => {
 
   const Traductor = useContext(TraductorContext);
  
-  const cargaDatos = async () => {
+  const cargaDatos = () => {
     const data = Controller.getAll();
     setDades(data);
   }
@@ -28,7 +28,21 @@ export default () => {
     {
       nom: "email",
       titol: Traductor.traduce("email"),
+    },
+    {
+      nom:"tel",
+      titol:Traductor.traduce("tel"),
+    },
+    {
+      nom:"date",
+      titol:Traductor.traduce("date")
+    },
+    {
+      nom:"color",
+      titol:Traductor.traduce("color")
     }
+
+
   ];
 
   return (

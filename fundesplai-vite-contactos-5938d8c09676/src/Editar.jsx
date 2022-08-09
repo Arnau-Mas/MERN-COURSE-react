@@ -20,6 +20,8 @@ export default (props) => {
   const [email, setEmail] = useState(contacto.email);
   const [tel, setTel] = useState(contacto.tel);
   const [volver, setVolver] = useState(false);
+  const [date, setDate] = useState(contacto.date);
+  const [color, setColor] = useState(contacto.color)
 
   const guardar = () => {
     const contactoModificado = {
@@ -27,6 +29,7 @@ export default (props) => {
       nom,
       email: email,
       tel: tel,
+      date:date
     };
 
     Controller.replaceItem(contactoModificado);
@@ -56,6 +59,16 @@ export default (props) => {
       <Form.Group>
         <Form.Label>{Traductor.traduce('tel')}</Form.Label>
         <Form.Control type="text" name="tel" value={tel} onChange={(e) => setTel(e.target.value)}  />
+      </Form.Group>
+            
+      <Form.Group>
+        <Form.Label>{Traductor.traduce('date')}</Form.Label>
+        <Form.Control type="text" name="date" value={date} onChange={(e) => setDate(e.target.value)}  />
+      </Form.Group>
+
+      <Form.Group>
+        <Form.Label>{Traductor.traduce('color')}</Form.Label>
+        <Form.Control type="color" name="color" value={color} onChange={(e) => setColor(e.target.value)}  />
       </Form.Group>
 
       <hr />

@@ -14,7 +14,9 @@ const diccionario = {
     tel: ['Teléfono', 'Telèfon'],
     cancelar: ['Cancelar', 'Deixa-ho estar'],
     guardar: ['Guardar', 'Desa els canvis'],
-    detalle: ['Detalle', 'Detall']
+    detalle: ['Detalle', 'Detall'],
+    date:["Fecha de Nacimiento", "Data de Naixement"],
+    color:["Color favorito", "Color preferit"]
 }
 
 export default diccionario;
