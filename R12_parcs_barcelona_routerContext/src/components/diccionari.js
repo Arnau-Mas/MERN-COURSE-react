@@ -14,6 +14,17 @@ const diccionario = {
     pedraforcaText:["Una mica més lluny que les anteriorment esmentades però, encara, dins de la província de Barcelona és on hi ha El Pedraforca, una muntanya que és al Berguedà i que és tot un símbol de Catalunya. Tant la muntanya com els voltants són ideals per descobrir fent rutes de senderisme, passejades amb bici, etcètera.", "Un poco más lejos que las anteriormente mencionadas pero, aún, dentro de la provincia de Barcelona es donde se encuentra El Pedraforca, una montaña que está en el Berguedà y que es todo un símbolo de Cataluña. Tanto la montaña como los alrededores son ideales para descubrir haciendo rutas de senderismo, paseos en bici, etcétera."],
     santLlorencLaMolaTitle:["Parc Natural de Sant Llorenç i La Mola", "Parque Natural de San Lorenzo y La Mola"],
     santLlorencLaMolaText:["Aquest parc es troba a menys de 30 minuts de Barcelona i compta amb la Mola, una muntanya ideal per pujar amb familiars o amics ja que és una senzilla ascensió de, com a molt, 1 hora de durada. Al cim d'aquesta muntanya us trobareu amb un restaurant així com unes belles vistes panoràmiques que us deixaran sense alè.", "Este parque se encuentra a menos de 30 minutos de Barcelona y cuenta con la Mola, una montaña ideal para subir con familiares o amigos ya que es una sencilla ascensión de, como mucho, 1 hora de duración. En la cima de esta montaña te encontrarás con un restaurante así como unas bellas vistas panorámicas que te dejarán sin aliento."],
+    /* Si volem salts de linia fer-ho amb template strings */
+    textFormatejat:[`
+    Aqui fas els salts de linia
+    que 
+    vols 
+    i pots posar tambe etiquetes html
+    <strong>Parrafo desde el texto formateado</strong>`, ` Aqui haces los saltos de linea
+    que 
+    quieres 
+    y puedes poner también etiquetas html
+    <strong>Paragraf des del text formatejat</strong>`] /* però les etiquetes html les has de parsejar amb dangerouslysetinner dangerouslySetInnerHTML={{__html: Traductor.traduce("textFormatejat")}} compte amb aixo no ho posis en un form que els clients poden posar codi javascript <script>alert(dades)</script> o algo en els formularis, tot i que react neteja bastantes coses d'aquestes.  PERO AIXÒ DE LES ETIQUETES NO ES GAIRE NECESSARI, PER AIXÒ HO FAS AL COMPONENT I JA. EL MILLOR ES IMPORTAR NOMES TEXTOS*/
 }
 
 export default diccionario;
