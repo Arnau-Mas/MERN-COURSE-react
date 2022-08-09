@@ -24,7 +24,7 @@ export default (props) => {
       <h3>{Traductor.traduce('email')}: {contacto.email}</h3>
       <h3>{Traductor.traduce('tel')}: {contacto.tel}</h3>
       <h3>{Traductor.traduce('date')}: {contacto.date}</h3>
-      <h3>{Traductor.traduce('color')}: {contacto.color}</h3>
+      <h3>{Traductor.traduce('color')}: <div style={{backgroundColor:contacto.color, width:"20px", height:"20px"}}></div></h3>
       <hr />
       <Link className='btn btn-primary' to='/contactos' >{Traductor.traduce('volver')}</Link>
     </>

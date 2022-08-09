@@ -11,8 +11,8 @@ export default (props) => {
   const [email, setEmail] = useState('');
   const [tel, setTel] = useState('');
   const [volver, setVolver] = useState();
-  const [date, setDate] = useState("")
-  const [color, setColor] = useState("");
+  const [date, setDate] = useState('')
+  const [color, setColor] = useState('');
 
   const guardar = () => {
     const clienteNuevo = {
@@ -58,7 +58,7 @@ export default (props) => {
 
       <Form.Group>
         <Form.Label>Color favorito</Form.Label>
-        <Form.Control type="color" name="color" value={color} onChange={(e) => setColor(e.target.value)}  />
+        <Form.Control type="color" name="color" value={color} onChange={(e) => setColor(e.target.value)} />
       </Form.Group>
       <hr />
 

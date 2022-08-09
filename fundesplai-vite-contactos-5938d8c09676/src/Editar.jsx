@@ -29,7 +29,8 @@ export default (props) => {
       nom,
       email: email,
       tel: tel,
-      date:date
+      date:date,
+      color: color
     };
 
     Controller.replaceItem(contactoModificado);

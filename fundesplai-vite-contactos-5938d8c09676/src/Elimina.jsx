@@ -29,6 +29,7 @@ export default (props) => {
     return <Navigate to="/contactos" />
   }
 
+  console.log(contacto);
   return (
     <>
       <h3>{Traductor.traduce('detalle')}</h3>
@@ -37,7 +38,7 @@ export default (props) => {
       <h3>{Traductor.traduce('email')}: {contacto.email}</h3>
       <h3>{Traductor.traduce('tel')}: {contacto.tel}</h3>
       <h3>{Traductor.traduce('date')}: {contacto.date}</h3>
-      <h3>{Traductor.traduce('color')}: {contacto.color}</h3>
+      <div><h3>{Traductor.traduce('color')}:</h3><p style={{width:"40px", height:"40px", backgroundColor:contacto.color}}></p></div>
       <hr />
       <Link className='btn btn-primary' to='/contactos' >{Traductor.traduce('volver')}</Link>
       {' '}
