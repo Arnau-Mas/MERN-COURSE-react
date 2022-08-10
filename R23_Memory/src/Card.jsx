@@ -1,8 +1,8 @@
-import { useContext } from "react"
+import { useContext, useState, useEffect } from "react"
 import ActiveContext from "./ActiveContext"
 export const Card = ({num}) => {
-    console.log("nou render")
-    let data = useContext(ActiveContext)
+    let data = useContext(ActiveContext);
+    const [active, setActive] = useState(false)
     let activeArray = data.active;
     let tarjeta = {
         backgroundColor:"purple",
@@ -18,8 +18,14 @@ export const Card = ({num}) => {
         let newActiveArray = data.active;
         newActiveArray[num] = true;
         data.setActive(newActiveArray)
+        setActive(!active);
+        data.setTwoNumbers([...data.twoNumbers, num])
         console.log(data)
       }
+      useEffect(() => {
+        activeArray = data.active;
+      }, [active])
+      
   return (
     <div onClick={() => handleClick()} style={tarjeta}>{activeArray[num] ? "A" : ""}</div>
   )
