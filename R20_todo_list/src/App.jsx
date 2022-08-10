@@ -13,10 +13,9 @@ function App() {
     setTasks([...tasks, task])
   }
 
-  function deleteTask(id){
-    const newTasks = tasks.map(task => task.id!=id);
-    setTasks(newTasks);
-  }
+  useEffect(() => { //manera de veure el valor real un cop ha acabat la asincronia de l'state. Si fas console log en el handleClick d'afegir, et mostrarà l'anterior array.
+    console.log(tasks)
+  }, [tasks])
 
   // useEffect(() => {
   //   // const localTasks = TaskControllers.getTasks();
@@ -30,7 +29,7 @@ function App() {
       <h1>To Do List</h1>
         <Row className="mx-auto g-0">
           <Col><NewTask addTask={addTask} /></Col>
-          <Col><TasksList tasks={tasks} deleteTask={deleteTask} setTasks={setTasks} /></Col>
+          <Col><TasksList tasks={tasks} setTasks={setTasks} /></Col>
         </Row>
     </div>
   )

@@ -1,10 +1,11 @@
 import Alert from 'react-bootstrap/Alert';
 import {AiOutlineDelete} from "react-icons/ai"
 import TaskControllers from './TaskControllers';
-export const TasksList = ({tasks, setTasks, deleteTask}) => {
+export const TasksList = ({tasks, setTasks}) => {
 
   function handleDelete(id){
     let actualizedTasks = TaskControllers.deleteTask(id);
+    console.log(actualizedTasks)
     setTasks(actualizedTasks);
   }
 

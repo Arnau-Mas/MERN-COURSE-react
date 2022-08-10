@@ -17,7 +17,7 @@ export const NewTask = ({addTask}) => {
       }
       setNewTask("")
     }
-
+    
     return (
         <Form onSubmit={handleSubmit} className="p-3">
             <Form.Group className="mb-3">
