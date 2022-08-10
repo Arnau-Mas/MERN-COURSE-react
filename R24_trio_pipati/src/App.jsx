@@ -12,9 +12,9 @@ function App() {
     result = "Empate"
   }else{
     if(eleccioJugador===1 && eleccioJugador===2 || eleccioJugador===2 && eleccioOrdinador===3 || eleccioJugador===3 && eleccioOrdinador ===1){
-      result="Guanya Ordinador"
+      result="Has perdut"
     }else{
-      result="Guanya Jugador"
+      result="Has guanyat"
     }
   }
 
