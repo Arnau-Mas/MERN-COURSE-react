@@ -3,8 +3,11 @@ import {Col, Row} from "react-bootstrap"
 import { NewTask } from "./components/NewTask"
 import TaskControllers from "./components/TaskControllers"
 import { TasksList } from "./components/TasksList"
+
+const localTasks = TaskControllers.getTasks(); //esto no seria posible si fuera async
+
 function App() {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(localTasks || []);
 
   function addTask(task){
     setTasks([...tasks, task])
@@ -15,12 +18,11 @@ function App() {
     setTasks(newTasks);
   }
 
-  useEffect(() => {
-    const localTasks = TaskControllers.getTasks();
-    setTasks(localTasks);
-    console.log(localStorage); 
-  /* per borrar totes les notes TaskControllers.saveAll([]) */
-  }, [])
+  // useEffect(() => {
+  //   // const localTasks = TaskControllers.getTasks();
+  //   setTasks(localTasks);
+  // /* per borrar totes les notes TaskControllers.saveAll([]) */
+  // }, [])
   
 
   return (

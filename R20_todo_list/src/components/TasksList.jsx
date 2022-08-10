@@ -5,7 +5,6 @@ export const TasksList = ({tasks, setTasks, deleteTask}) => {
 
   function handleDelete(id){
     let actualizedTasks = TaskControllers.deleteTask(id);
-    console.log(actualizedTasks);
     setTasks(actualizedTasks);
   }
 
