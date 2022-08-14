@@ -6,7 +6,7 @@ function App() {
   const [active, setActive] = useState([]);
   const [numbers, setNumber] = useState([])
   const [twoNumbers, setTwoNumbers] = useState([])
-  /* Valorar si crear un array de valors que anirien enllaçats a cada un dels components */
+  //! Valorar si crear un array de valors que anirien enllaçats a cada un dels components
   useEffect(() => {
     let activeArray= [];
     let numbersArray = [];
