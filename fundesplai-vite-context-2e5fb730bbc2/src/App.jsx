@@ -3,7 +3,7 @@ import { useState } from 'react'
 import './App.css'
 import { Navbar, Nav, Container, Button } from 'react-bootstrap';
 import { Outlet, Link } from "react-router-dom";
-// datos y contexto para traducciones
+// datos para traducciones
 import diccionario from "./diccionario";
 // contexto donde guardaremos la función traduce y el idioma actual
 import TraductorContext from "./TraductorContext";
