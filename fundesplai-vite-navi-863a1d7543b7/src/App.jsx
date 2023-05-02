@@ -26,6 +26,7 @@ function App() {
       </Navbar>
       <br />
       <Container>
+        {/* l'outlet s'utilitza x dir on vols que renderitzi les rutes anidades dins del ROUTE principal del main.jsx. Osigui, li dius q el route principal és App i a dins tens unes rutes anidades (la resta de rutes, dojncs a Outlet és on es mostra tota la resta. Així fas que sempre es vegi el nav i el footer sense haver d'importar-los als altres components també.)  */}
         <Outlet />
       </Container>
     </>
